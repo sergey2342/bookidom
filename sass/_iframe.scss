@@ -1,0 +1,11 @@
+.iframe-wrapper {
+    position: relative;
+    z-index: 1;
+    background: rgba(55, 55, 55, .2);
+    .container {
+        padding-top: 100px;
+    }
+    .iframe {
+        border-radius: 5px;
+    }
+}

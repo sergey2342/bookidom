@@ -1,0 +1,59 @@
+.footer {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(55, 55, 55, .2), rgba(0, 0, 0, .5));
+    &-button {
+        margin-top: 10px;
+        border: 1px solid #fff;
+        padding: 5px 15px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 3px;
+        font-weight: 700;
+        background: rgba(255, 255, 255, .35);
+        transition: 0.3s all;
+        color: #ffffff;
+        &:hover {
+            background: #fff;
+            color: #005154;
+        }
+    }
+    &-href {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        color: #fff;
+    }
+    &-agreement,
+    &-help {
+        text-decoration: none;
+        color: #fff;
+    }
+    &-help {
+        margin-left: 15px;
+    }
+}
+
+
+#sppr_l {
+    color: #2fc66a;
+    max-width: 200px;
+    display: none;
+    margin: 0 auto;
+  }
+
+.pr_div {
+    text-align: center;
+}
+  
+.share-icons {
+    float: right;
+    display: none;
+}
+  
+.share-icons {
+    float: left;
+    text-align: center;
+    float: unset;
+}

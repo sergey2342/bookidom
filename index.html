@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="kBRX89m3tnc9Rn1T3M9ZH4DRofP2QxatvdAGfUkM">  
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    
+    <link rel="stylesheet" href="https://office.bonusonline.ru/css/fontawesome5.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.3.0/firebase-ui-auth.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Bookidom.com</title>
+
+    <script src="https://bookidom.com/js/app.js?v=1" defer></script>
+</head>
+<body>
+    <div class="bg"></div>
+
+    <div class="toggle-btn button-hotel">Для отелей</div>
+
+    <div class="nav">
+        <div class="nav-title">Bookidom.com</div>
+        <div class="nav-lang">
+            <img class="nav-lang-img" lang="ru" src="img/russia.svg" alt="ru"><i class="fas fa-angle-down nav-lang-icon"></i>
+            <div class="nav-lang-select">
+                <img src="img/united-kingdom.svg" alt="en">
+                <img src="img/russia.svg" alt="ru">
+            </div>
+        </div>
+        <div class="nav-login">Войти</div>
+    </div>
+    <div class="wrapper">
+
+        <div class="container">
+            <div class="main">
+                <div class="main-label">Bookidom</div>
+                <div class="main-title">для туристов</div>
+                <div class="main-descr">Прямое бронирование</div>
+                <div class="main-about">Bookidom - это Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt officia, a provident sit nemo illum aliquam natus perspiciatis! Numquam maiores quam quae repellat temporibus minima praesentium debitis, ratione tempore? Tempore.</div>
+    
+                <div class="main-arrow">
+                    <span>.</span>
+                    <span>.</span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="iframe-wrapper">
+        <div class="container">
+            <div fullScreen="true">
+                <iframe class="iframe" id="s_frame" src="https://stuzon.com/pom_link1.php?idn=202&short=1" height="100%" width="100%" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+                <iframe class="iframe d-none" id="t_frame" src="" height="100%" width="100%" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>   
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="pr_div">
+                <div id="sppr_l"><a target="_blank"  class="footer-button" id="pr_l" href="https://bookidom.com">https://bookidom.com</a><br><span style="position: relative; top: 4px;">Скопировано</span></div>              
+                <button id="txpr_l" class="footer-button" onclick="CopyToClipboard0('pr_l');return false;">Поделиться</button>
+            </div>
+            <div id="icons" class="share-icons"></div> 	
+            <div class="footer-href">
+                <div>
+                    <a class="footer-agreement" href="https://stuzon.com/material/186/1655">Соглашение</a>
+                    <a target="_blank" class="footer-help"  href='https://stuzon.com/material/196'>Помощь</a>
+                </div>
+                <div>
+                    <p>&copy; Bookidom.com 2020. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-in">
+        <div class="modal-bg"></div>
+        <form class="form-in">
+            <div class="card rounded">
+                <span class="modal-close">x</span>
+                <h3 class="card-header text-center text-secondary">Вход для туристов</h3>
+                <div class="card-body">
+                    <div id="firebaseui-auth-container"></div>                
+                </div>		
+            </div>		
+        </form>
+    </div>
+
+
+
+
+
+
+
+    <script src="/js/wh.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script> 
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.3.0/firebase-ui-auth__ru.js"></script>
+    <script>
+        window.addEventListener("load", (event) => {
+            var firebaseConfig = {
+                apiKey: "AIzaSyBSyJX36Hwkz7qd-lt5sTwO3ueg3yOcZVM",
+                authDomain: "distant-office.firebaseapp.com",
+                databaseURL: "https://distant-office.firebaseio.com",
+                projectId: "distant-office",
+                storageBucket: "distant-office.appspot.com",
+                messagingSenderId: "723349202322"
+            };
+
+            var provides = [
+            "Email",
+            // "Phone",
+            "Google",
+            "Facebook",
+            "Apple"
+            ];
+
+            var signIn = [];
+
+            provides.forEach(function (value) {
+                switch (value)
+                {
+                    case "Google":
+                        signIn.push(firebase.auth.GoogleAuthProvider.PROVIDER_ID);
+                        break;
+                    case "Facebook":
+                        signIn.push(firebase.auth.FacebookAuthProvider.PROVIDER_ID);
+                        break;
+                    case "Apple":
+                        signIn.push("apple.com");
+                        break;
+                    case "Twitter":
+                        signIn.push(firebase.auth.TwitterAuthProvider.PROVIDER_ID);
+                        break;
+                    case "Github":
+                        signIn.push(firebase.auth.GithubAuthProvider.PROVIDER_ID);
+                        break;
+                    case "Email":
+                        signIn.push(firebase.auth.EmailAuthProvider.PROVIDER_ID);
+                        break;
+                    case "Phone":
+                        signIn.push(firebase.auth.PhoneAuthProvider.PROVIDER_ID);
+                        break;
+                    default:
+                        break;
+                }
+            });
+
+            firebase.initializeApp(firebaseConfig);
+            ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+            ui.start('#firebaseui-auth-container', {
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                // If a user signed in with email link, ?showPromo=1234 can be obtained from
+                // window.location.href.
+                // ...
+                if (authResult.additionalUserInfo.providerId == 'password' && authResult.additionalUserInfo.isNewUser) 
+                {
+                    var actionCodeSettings = {
+    //~                     url: '',
+                url: 'https://club.online-agent.ru',		    
+                        handleCodeInApp: false
+                    };
+                    console.log(authResult);
+                    authResult.user.sendEmailVerification(actionCodeSettings);
+
+                }
+
+                firebase.auth().currentUser.getIdToken(false).then(function(idToken) {
+                    // Send token to your backend via HTTPS
+                    // ...
+                    // alert(idToken);
+                    window.location.replace('/login/'+idToken);
+                }).catch(function(error) {
+                    console.log("getIdToken error: "+error);
+                    // Handle error
+                });
+                return false;
+                },
+            },
+        credentialHelper: firebaseui.auth.CredentialHelper.NONE,  
+            signInOptions: signIn,
+    /*          
+            signInOptions: [
+                {
+                provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                recaptchaParameters: {
+                    type: 'image', // 'audio'
+                    size: 'normal', // 'invisible' or 'compact'
+                    badge: 'bottomleft' //' bottomright' or 'inline' applies to invisible.
+                },
+                defaultCountry: 'RU', // Set default country to the United Kingdom (+44).
+                loginHint: $("#phone").val(),
+                whitelistedCountries: ['RU', '+7']
+                }
+            ]
+    */
+            });
+        });
+    window.addEventListener("message", function(e){
+    //~     var this_frame = document.getElementById("s_frame");
+        var this_frame = document.getElementById("s_frame");    
+        if (this_frame.contentWindow === e.source) {
+            this_frame.height = e.data.height + "px";
+            this_frame.style.height = e.data.height + "px";
+        }
+    })
+    window.addEventListener("message", function(e){
+        var this_frame = document.getElementById("t_frame");    
+        if (this_frame.contentWindow === e.source) {
+            this_frame.height = e.data.height + "px";
+            this_frame.style.height = e.data.height + "px";
+        }
+    })
+
+    $(document).ready(function(){
+        $("body").on("click", ".nav-left", function () {
+            $('#s_frame').removeClass('d-none');
+            $('#t_frame').addClass('d-none');
+            $('.nav-link').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+        
+        $("body").on("click", ".nav-right", function () {
+            if(!$('#t_frame').attr('src'))$('#t_frame').attr('src', 'https://stuzon.com/pom_link1.php?idn=199&short=1');
+            $('#t_frame').removeClass('d-none');
+            $('#s_frame').addClass('d-none');
+            $('.nav-link').removeClass('active');
+            $(this).addClass('active'); 
+            return false;	
+        });	
+        })
+    </script>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;0,800;1,400&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+  }
+
+body {
+    
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background: url(https://get.pxhere.com/photo/beach-sea-water-ocean-person-texture-wave-underwater-blue-wafe-swimming-atmosphere-of-earth-wind-wave-63881.jpg) center center/cover no-repeat;
+    background: url(https://images.pexels.com/photos/2345706/pexels-photo-2345706.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200) center center/cover no-repeat;
+    z-index: -1;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(55, 55, 55, .2);
+}
+
+.toggle-btn {
+    position: fixed;
+    right: -52px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    color: rgb(66, 66, 66);
+    font-size: 20px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .8);
+    padding: 5px 10px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.3s all;
+    &:hover {
+        background: #fff;
+        color: #000;
+        right: -47px;
+    }
+}
+
+.container {
+    position: relative;
+    width: 85%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+
+@import 'nav';
+@import 'main';
+@import 'iframe';
+@import 'footer';
+@import 'modal';
+@import 'keyframes';
