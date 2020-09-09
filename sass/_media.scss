@@ -1,0 +1,152 @@
+@media (max-width: 1299px) {
+    .main {
+        &-label {
+            font-size: 90px;
+        }
+        &-title {
+            font-size: 75px;
+            margin-top: 0;
+        }
+        &-descr {
+            font-size: 47px;
+            margin-top: 10px;
+        }
+    }
+}
+
+@media (max-width: 1099px) {
+    .main {
+        align-items: center;
+        &-label,
+        &-title,
+        &-descr {
+            top: -60px;
+            animation: showTitleMin 1.4s ease-in-out forwards;
+        }
+        &-about {
+            right: 50%;
+            top: 65%;
+            transform: translate(50%, 0);
+            transition: 0.3s top;
+        }
+    }
+}
+
+@media (max-width: 599px) {
+    .wrapper {
+        .container {
+            width: 95%;
+        }
+    }
+    .main {
+        &-label,
+        &-title,
+        &-descr {
+            line-height: 65px;
+        }
+        &-label {
+            font-size: 80px;
+        }
+        &-title {
+            font-size: 63px;
+        }
+        &-descr {
+            font-size: 38px;
+            margin-top: 0px;
+        }
+        &-about {
+            top: 63%;
+        }
+        &-arrow {
+            bottom: 50px;
+        }
+    }
+    .iframe-wrapper {
+        .container {
+            padding: 50px 0 50px 0;
+        }
+    }
+    .footer {
+        &-href {
+            flex-direction: column;
+        }
+        &-copy {
+            margin-top: 5px;
+        }
+    }
+}
+
+@media (max-width: 499px) {
+    .toggle-btn {
+        top: 85%;
+    }
+    .main {
+        &-label,
+        &-title,
+        &-descr {
+            line-height: 60px;
+        }
+        &-label {
+            font-size: 75px;
+        }
+        &-title {
+            font-size: 53px;
+        }
+        &-descr {
+            font-size: 34px;
+        }
+        &-about {
+            top: 60%;
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 399px) {
+    .nav {
+        &-title {
+            padding-left: 0;
+        }
+    }
+    .wrapper {
+        .container {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .nav {
+        padding: 15px 5px;
+        &-lang {
+            margin-right: 11px;
+        }
+    }
+    .main {
+        &-label {
+            font-size: 63px;
+        }
+        &-title {
+            font-size: 47px;
+        }
+        &-descr {
+            font-size: 29px;
+        }
+        &-about {
+            top: 55%;
+        }
+    }
+    .iframe-wrapper {
+        .container {
+            width: 100%;
+        }
+    }
+    .form-in {
+        width: 95%;
+    }
+    .footer {
+        &-copy {
+            font-size: 13px;
+        }
+    }
+}

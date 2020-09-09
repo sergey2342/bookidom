@@ -9,11 +9,11 @@
     &-title,
     &-descr {
         position: relative;
-        // margin-left: 200px;
         font-weight: 700;
         line-height: 80px;
         width: auto;
         opacity: 0;
+        transition: 0.3s font-size;
     }
     &-label {
         font-size: 110px;

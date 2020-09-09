@@ -1,51 +1,57 @@
 .modal-in {
     position: fixed;
-    width: 100%;
-    height: 100vh;
-    display: none;
-    z-index: 1000;
-  }
-  
-  .modal-bg {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 99;
-    background: rgba(0, 0, 0, 0.3);
-    -webkit-animation: showModalBg 0.3s linear forwards;
-            animation: showModalBg 0.3s linear forwards;
-  }
+    height: 100vh;
+    display: none;
+    z-index: 10000;
+}
   
-  .modal-close {
-    position: absolute;
-    right: 15px;
-    top: 5px;
-    color: #ff5d5d;
-    font-weight: bold;
-    font-size: 27px;
-    cursor: pointer;
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
-  }
+.modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.3);
+  animation: showModal 0.3s linear forwards;
+}
   
-  .modal-close:hover {
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
-    color: red;
-  }
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  color: #ff5d5d;
+  font-weight: bold;
+  font-size: 27px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
   
-  .form-in {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    -webkit-transform: translate(50%, -50%);
-            transform: translate(50%, -50%);
-    width: 400px;
-    height: auto;
-    z-index: 100;
-    overflow: hidden;
-    -webkit-animation: showModal 1s ease-in-out forwards;
-            animation: showModal 1s ease-in-out forwards;
-  }
+.modal-close:hover {
+  transition: 0.3s all;
+  color: red;
+}
+  
+.form-in {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: auto;
+  z-index: 100;
+  overflow: hidden;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background: #fff;
+  animation: showModal 1s ease-in-out forwards;
+}
+
+.card-header {
+  text-align: center;
+  line-height: 50px;
+  border-bottom: 1px solid #b6b6b6;
+}
